@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pokemon.TrainingPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="easyBtn" Clicked="EasyBtn_Clicked" Grid.Row="1" Grid.Column="0" Text="Easy" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button x:Name="normalBtn" Clicked="NormalBtn_Clicked" Grid.Row="1" Grid.Column="1" Text="Normal" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button x:Name="hardBtn" Clicked="HardBtn_Clicked" Grid.Row="1" Grid.Column="2" Text="Hard" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button x:Name="insaneBtn" Clicked="InsaneBtn_Clicked" Grid.Row="2" Grid.Column="1" Text="Insane" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button x:Name="backBtn" Clicked="BackBtn_Clicked"  Grid.Row="0" Grid.Column="0" Text="Back" HorizontalOptions="Start" VerticalOptions="Start"/>
+        <Label Grid.Column="1"  Text="Choose your difficulty" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>

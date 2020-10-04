@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:pokemon"
+             x:Class="pokemon.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    <Grid Margin="10" HorizontalOptions="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="Pokemon Game"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               FontAttributes="Bold"
+               FontSize="30"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+        <Label Text="Email: "
+               Grid.Row="1" Grid.Column="0" 
+               FontAttributes="Bold"
+               VerticalOptions="Center"/>
+        <Entry x:Name="emailtxt"
+               Grid.Row="1" Grid.Column="1"
+               Placeholder="ex: xxx@gmail.com"
+               VerticalOptions="Center" 
+               Text="{Binding Email}"/>
+
+        <Label Text="Password: "
+               Grid.Row="2" Grid.Column="0"
+               FontAttributes="Bold"
+               VerticalOptions="Center"/>
+        <Entry x:Name="passtxt" IsPassword="True"
+               Grid.Row="2" Grid.Column="1"
+               Placeholder="ex: mypass123"
+               VerticalOptions="Center"
+               Text="{Binding Password}"/>
+
+        <Button x:Name="loginBtn"
+                Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                Text="Login"
+                Clicked="LoginBtn_Clicked"/>
+        <Button x:Name="registerBtn"
+                Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                Text="Register"
+                Clicked="RegisterBtn_Clicked" />
+        <Button x:Name="forgotBtn"
+                Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                Text="Forgot Password"
+                Clicked="ForgotBtn_Clicked" />
+    </Grid>
+
+</ContentPage>

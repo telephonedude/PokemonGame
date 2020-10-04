@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pokemon.BattlePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.RowSpan="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="playerMsg" HorizontalOptions="Center" VerticalOptions="Center" Margin="20,20,20,20"/>
+                <Label x:Name="enemyMsg" HorizontalOptions="Center" VerticalOptions="Center" Margin="20,20,20,20"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="playerPoke" Text="your pokemon name" HorizontalOptions="Center"/>
+                    <Label x:Name="playerPokeLevel" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Image  x:Name="playerPokePic" WidthRequest="125" HeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <ProgressBar x:Name="playerPokeHP" Progress="1" ProgressColor="Red" Margin="30,0,30,0"/>
+                <ProgressBar x:Name="playerPokeEXP" Progress="0" ProgressColor="LightBlue" Margin="30,0,30,0"/>
+            </StackLayout>
+            <Image x:Name="eventHorizon" Grid.RowSpan="2" Grid.Column="1" WidthRequest="125" HeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <StackLayout Grid.Row="0" Grid.Column="2">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="enemyName" HorizontalOptions="Center"/>
+                    <Label x:Name="enemyPokeLevel" Text="" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Image x:Name="enemyPic" WidthRequest="125" HeightRequest="125" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <ProgressBar x:Name="enemyHP" Progress="1" ProgressColor="Red" Margin="30,0,30,0"/>
+            </StackLayout>
+            <Grid Grid.RowSpan="2" Grid.ColumnSpan="3" x:Name="switch_Grid" IsVisible="False" IsEnabled="False" BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ImageButton x:Name="pokeBtn1" Clicked="PokeBtn1_Clicked" Grid.Column="0" Grid.Row="0"/>
+                <ImageButton x:Name="pokeBtn2" Clicked="PokeBtn2_Clicked" Grid.Column="1" Grid.Row="0"/>
+                <ImageButton x:Name="pokeBtn3" Clicked="PokeBtn3_Clicked" Grid.Column="2" Grid.Row="0"/>
+                <Label x:Name="pokeLabel1" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+                <Label x:Name="pokeLabel2" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+                <Label x:Name="pokeLabel3" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+            </Grid>
+            <Grid Grid.ColumnSpan="3" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="playerMove1" Clicked="PlayerMove1_Clicked" Grid.Row="0" Grid.Column="0"/>
+                <Button x:Name="playerMove2" Clicked="PlayerMove2_Clicked" Grid.Row="0" Grid.Column="1"/>
+                <Button x:Name="playerMove3" Clicked="PlayerMove3_Clicked" Grid.Row="1" Grid.Column="1"/>
+                <Button x:Name="playerMove4" Clicked="PlayerMove4_Clicked" Grid.Row="1" Grid.Column="0"/>
+
+                <Grid Grid.RowSpan="2" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="switch_Btn" Clicked="Switch_Btn_Clicked" Text="Switch Pokemon" Grid.Row="1" Grid.Column="0"/>
+                    <Button x:Name="switch_BackBtn" Clicked="Switch_BackBtn_Clicked" Text="Back" Grid.Row="0" Grid.Column="0" IsVisible="False" IsEnabled="False"/>
+                    <Button x:Name="runBtn" Clicked="RunBtn_Clicked" Text="Run Away" Grid.Row="1" Grid.Column="1"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

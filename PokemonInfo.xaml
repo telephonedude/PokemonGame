@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pokemon.PokemonInfo"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <Label Text="POKEDEX" HorizontalOptions="Center"/>
+        <ListView x:Name="listView" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Image Source="{Binding BigImage}" HeightRequest="200" WidthRequest="200"/>
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Type, StringFormat = ' {0:F0} pokemon'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small" />
+                            <Label Text="{Binding HealthPoints, StringFormat = 'Health Points : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Attack, StringFormat = 'Attack : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Defense, StringFormat = 'Defense : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Level, StringFormat = 'Level : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding XP, StringFormat = 'Experience : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move1, StringFormat = 'Move 1 : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move1Type, StringFormat = 'Type : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move2, StringFormat = 'Move 2 : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move2Type, StringFormat = 'Type : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move3, StringFormat = 'Move 3 : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move3Type, StringFormat = 'Type : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move4, StringFormat = 'Move 4 : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                            <Label Text="{Binding Move4Type, StringFormat = 'Type : {0:F0}'}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Exit" x:Name="exitBtn" Clicked="ExitBtn_Clicked"/>
+    </StackLayout>
+</ContentPage>
